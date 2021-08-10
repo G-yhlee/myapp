@@ -2,21 +2,7 @@ import {log,yymmdd} from '../helper/helper'
 import {curry, go, map} from "fxjs";
 import { cloneDeep } from "lodash"
 import { STATE_S_current_client_id } from "../store/store"
-let _ = { 
-    "keys": [
-        "DISTINCT(visitor_id)",
-        "timestamp",
-        "visitor_id",
-        "timestamp",
 
-    ],
-    "conditions": [
-        "timestamp>'20210525-173500'",
-        "timestamp<'20210525-174000'",
-        "timestamp LIKE '20210526%'",
-        "'c_name'='이윤호'"
-    ]
-}
 export function getApiFormat () {
     return {
         "reqid": "40137",
@@ -96,20 +82,3 @@ export function getTodayVisitors () {
     );
 }
 
-export function getTodayStatics () {
-    return go(
-        getApiFormat(),
-        updateApiFormat({option: "select_statics"}),
-        fetchApiFormat,
-        getDBFromResponse,
-    );
-}
-export function getCurrentVisitors (visitors) {
-    return go(
-        getApiFormat(),
-        updateApiFormat({option: "select_summary_today"}),
-        fetchApiFormat,
-        getDBFromResponse,
-        getCurrentVisitorsFromDB(visitors),
-    );
-}
