@@ -1,0 +1,1 @@
+export const href = "javascript:void(0);"
