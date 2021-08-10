@@ -1,5 +1,4 @@
-import {S_onRegister,F_onRegister} from './store'
-import {api,fetchApi} from '../api_function/api_function'
+import {S_on4Register} from './store'
 
 function register({id,name,pass1,pass2}) {
   if (!id) return alert("아이디를 입력해주십시오.");
@@ -33,15 +32,10 @@ function register({id,name,pass1,pass2}) {
     });
 }
 
-
-
-export function onRegisterFetch(e) {
+export function do1RegisterFetch(e) {
 	let fetchData;
-	S_onRegister.update(s => {fetchData = s; return s})
-
+	S_on4Register.update(s => {fetchData = s; return s})
 	console.log(fetchData); 
 	register(fetchData)
-   
-
 }
 

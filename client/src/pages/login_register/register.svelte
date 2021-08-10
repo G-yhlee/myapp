@@ -1,7 +1,7 @@
 <script>
-    import {onLogin} from '../../lib/store/onLogin.js'
-    import {onRegister} from '../../lib/store/onRegister.js'
-    import {onRegisterFetch} from '../../lib/store/onRegisterFetch.js'
+    import {on2LoginRegister} from '../../lib/store/on2LoginRegister.js'
+    import {on4Register} from '../../lib/store/on4Register.js'
+    import {do1RegisterFetch} from '../../lib/store/do1RegisterFetch.js'
   // const id = document.querySelector("#id"),
   // name = document.querySelector("#name"),
   // psword = document.querySelector("#psword");
@@ -78,12 +78,12 @@
 <div class="login-page">
     <div class="form">
       <form class="login-form">
-        <input id="id" type="text" placeholder="아이디" data-x="id"  on:change={onRegister} />
-        <input id="name" type="text" placeholder="이름" data-x="name"  on:change={onRegister} />
-        <input id="psword" type="password" placeholder="비밀번호" data-x="pass1"  on:change={onRegister}/>
-        <input id="confirm-psword" type="password" placeholder="비밀번호 확인" data-x="pass2"  on:change={onRegister}/>
-        <p id="button"  on:click={onRegisterFetch}  >SIGN UP</p>
-        <p class="message"  on:click={onLogin} data-x="S2">Already registered? login</p>
+        <input id="id" type="text" placeholder="아이디" data-x="id"  on:change={on4Register} />
+        <input id="name" type="text" placeholder="이름" data-x="name"  on:change={on4Register} />
+        <input id="psword" type="password" placeholder="비밀번호" data-x="pass1"  on:change={on4Register}/>
+        <input id="confirm-psword" type="password" placeholder="비밀번호 확인" data-x="pass2"  on:change={on4Register}/>
+        <p id="button"  on:click={do1RegisterFetch}  >SIGN UP</p>
+        <p class="message"  on:click={on2LoginRegister} data-x="S2">Already registered? login</p>
       </form>
     </div>
   </div>

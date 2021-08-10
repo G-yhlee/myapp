@@ -1,14 +1,16 @@
 <script>
-  import {onLogin} from '../../lib/store/onLogin.js'
+  import {on2LoginRegister} from '../../lib/store/on2LoginRegister.js'
+  import {on2Login} from '../../lib/store/on2Login.js'
+  import {do1LoginFetch} from '../../lib/store/do1LoginFetch.js'
   import {href} from '../../lib/helper/helper'
 </script>
 	<div class="login-page">
 		<div class="form">
 		  <form class="login-form">
-			<input id="id" type="text" placeholder="아이디"/>
-			<input id="psword" type="password" placeholder="비밀번호"/>
-			<p id="button" >login</p >
-			<div class="message" on:click={onLogin} data-x="S1" >Not registered? Create an account</div>
+			<input id="id" type="text" placeholder="아이디" data-x="id"  on:change={on2Login}/>
+			<input id="psword" type="password" placeholder="비밀번호" data-x="pass"  on:change={on2Login}/>
+			<p id="button" on:click={do1LoginFetch} >login</p >
+			<div class="message" on:click={on2LoginRegister} data-x="S1" >Not registered? Create an account</div>
 		  </form>
 		</div>
 	  </div>
